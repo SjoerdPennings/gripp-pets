@@ -5,12 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Pet extends Model
+class PetType extends Model
 {
     use HasFactory;
-
-    public function type()
-    {
-        return $this->belongsTo(PetType::class);
-    }
 }
