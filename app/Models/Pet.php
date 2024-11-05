@@ -9,6 +9,12 @@ class Pet extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'pet_type_id',
+        'address',
+    ];
+
     public function type()
     {
         return $this->belongsTo(PetType::class);

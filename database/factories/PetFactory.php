@@ -19,7 +19,7 @@ class PetFactory extends Factory
     {
         return [
             'name' => fake()->firstName(),
-            'type' => fake()->randomElement(PetType::all()->pluck('id')->toArray()),
+            'pet_type_id' => fake()->randomElement(PetType::all()->pluck('id')->toArray()),
             'address' => fake()->address(),
         ];
     }
