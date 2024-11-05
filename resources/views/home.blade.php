@@ -6,7 +6,12 @@
     <title>Gripp Pets</title>
 </head>
     <body>
-        <form method="POST" action="/add-pet">
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                <p style="color: red">{{ $error }}</p>
+            @endforeach
+        @endif
+        <form method="POST" action="{{route('add-pet')}}">
             @csrf
             <label for="name">Name</label>
             <input type="text" name="name">
@@ -31,12 +36,14 @@
                 <th>Name</th>
                 <th>Type</th>
                 <th>Address</th>
+                <th>Actions</th>
             </tr>
             @foreach ($pets as $pet)
                 <tr>
                     <td>{{ $pet->name }}</td>
                     <td>{{ $pet->petType->name }}</td>
                     <td>{{ $pet->address }}</td>
+                    <td><a href="{{route('delete-pet', ['id' => $pet->id])}}">Delete</a></td>
                 </tr>
             @endforeach
         </table>

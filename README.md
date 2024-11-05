@@ -3,6 +3,11 @@ Een overzicht van huisdieren.
 
 Gebruikt Laravel en PHP8.
 
+## Installatie
+- Run `npm install` en `composer install`
+- Run `php artisan migrate --seed` om de database te installeren.
+- Run `php artisan serve` om de server te starten.
+
 ## Notities
 SQLite wordt gebruikt omdat MySQL lokaal niet mee wou werken.
 
