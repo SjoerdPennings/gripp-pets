@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pet;
+use App\Models\PetType;
 
 class PetController extends Controller
 {
     public function index()
     {
-        return view('home');
+        return view('home', [
+            'pets' => Pet::all()->sortBy('name'),
+            'petTypes' => PetType::all()
+        ]);
     }
 
     public function store(Request $request)

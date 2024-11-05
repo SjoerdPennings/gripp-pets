@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('pets', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('pet_type_id')->constrained();
+            $table->foreignId('pet_type_id');
             $table->string('address');
             $table->timestamps();
         });

@@ -15,7 +15,7 @@ class Pet extends Model
         'address',
     ];
 
-    public function type()
+    public function petType()
     {
         return $this->belongsTo(PetType::class);
     }

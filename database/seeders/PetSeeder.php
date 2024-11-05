@@ -14,7 +14,8 @@ class PetSeeder extends Seeder
      */
     public static function run(): void
     {
-        Pet::factory(10)->create();
-
+        foreach (range(1, 4) as $type) {
+            Pet::factory(3)->for(PetType::find($type))->create();
+        }
     }
 }
